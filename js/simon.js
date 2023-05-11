@@ -39,15 +39,33 @@ let clock = setInterval(
 
         timer.innerHTML = "Timer=" + " " + seconds;
         if(seconds === 0){
-            
-            numMemoria.innerHTML = "";
             clearInterval(clock);
+            numMemoria.innerHTML = "";
+            
             
             // l’utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
             for (let i = 0; i < 5; i++){
-                const memoriaNumeri = parseInt(prompt("Inserisci i numeri che hai appena visti, uno alla volta"));
-                console.log(memoriaNumeri);
+                const memoriaNumeriRichiesti = parseInt(prompt("Inserisci i numeri che hai appena visti, uno alla volta"));
+                console.log(memoriaNumeriRichiesti);
+
+                numMemoria.innerHTML += memoriaNumeriRichiesti + " ";
+
+                if (numGenerati.includes(memoriaNumeriRichiesti)){
+                    
+                    const numCorretti = document.getElementById("corretti");
+                    numCorretti.classList.add("green");
+                    numCorretti.innerHTML += memoriaNumeriRichiesti + " ";
+                    console.log("bravo");
+                } else {
+
+                    const numSbagliati = document.getElementById("sbagliati");
+                    numSbagliati.classList.add("red");
+                    numSbagliati.innerHTML += memoriaNumeriRichiesti + " ";
+                    console.log("Sbagliato!");
+                }
             }
+
+            
 
             
         
@@ -64,11 +82,6 @@ let clock = setInterval(
 
 
 
-
-
-// Dopo 30 secondi i numeri scompaiono
-
-        // l’utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
 
 
 
