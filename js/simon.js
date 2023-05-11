@@ -16,7 +16,7 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 
 const numMemoria = document.getElementById("memory");
 
-
+let score = 0;
 // Visualizzare in pagina 5 numeri casuali
         // i numeri devono essere 5, da 1 a 100.
     
@@ -30,7 +30,7 @@ const numMemoria = document.getElementById("memory");
 
 // Da lì parte un timer di 30 secondi.
 const timer = document.getElementById("timer");
-let seconds = 10;
+let seconds = 30;
 
 
 // Dopo 30 secondi i numeri scompaiono
@@ -52,9 +52,10 @@ let clock = setInterval(
 
                 if (numGenerati.includes(memoriaNumeriRichiesti)){
                     
+                    score++;
                     const numCorretti = document.getElementById("corretti");
                     numCorretti.classList.add("green");
-                    numCorretti.innerHTML += memoriaNumeriRichiesti + " ";
+                    numCorretti.innerHTML += memoriaNumeriRichiesti + " " + score;
                     console.log("bravo");
                 } else {
 
@@ -64,13 +65,7 @@ let clock = setInterval(
                     console.log("Sbagliato!");
                 }
             }
-
-            
-
-            
-        
-          
-           
+  
         }else {
             seconds--;
             console.log(seconds);
