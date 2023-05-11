@@ -33,8 +33,7 @@ const timer = document.getElementById("timer");
 let seconds = 10;
 
 
-
-
+// Dopo 30 secondi i numeri scompaiono
 let clock = setInterval( 
     function () {
 
@@ -44,7 +43,7 @@ let clock = setInterval(
             numMemoria.innerHTML = "";
             clearInterval(clock);
             
-   
+            // l’utente deve inserire, uno alla volta, i numeri che ha visto precedentemente, tramite il prompt().
             for (let i = 0; i < 5; i++){
                 const memoriaNumeri = parseInt(prompt("Inserisci i numeri che hai appena visti, uno alla volta"));
                 console.log(memoriaNumeri);
