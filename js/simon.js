@@ -30,7 +30,7 @@ const numMemoria = document.getElementById("memory");
 
 // Da lì parte un timer di 30 secondi.
 const timer = document.getElementById("timer");
-let seconds = 30;
+let seconds = 10;
 
 
 
@@ -40,15 +40,19 @@ let clock = setInterval(
 
         timer.innerHTML = "Timer=" + " " + seconds;
         if(seconds === 0){
-            numMemoria.innerHTML = "";
-
             
+            numMemoria.innerHTML = "";
             clearInterval(clock);
-
+            
+   
             for (let i = 0; i < 5; i++){
                 const memoriaNumeri = parseInt(prompt("Inserisci i numeri che hai appena visti, uno alla volta"));
+                console.log(memoriaNumeri);
             }
 
+            
+        
+          
            
         }else {
             seconds--;
@@ -70,7 +74,6 @@ let clock = setInterval(
 
 
 
-       
 
 
 
